@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PARA TI ♡ </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <style>
+        /* === styles (fusionados desde style.css) === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primario: #fff;
+            --fondo: #ffebf2;
+            --fondo-sobre: #ffe3ed;
+            --solapa-sobre: #ffccd5;
+            --cuerpo-sobre: #ffc1d1;
+            --sombra: rgba(0, 0, 0, 0.2);
+            --texto: #003049;
+            --corazon: #ff477e;
+        }
+
+        body {
+            background: var(--fondo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            font-family: "Marck Script", serif;
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 50px;
+            color: #444;
+        }
+
+        .contenedor { width: 400px; }
+
+        .envoltura-sobre {
+            position: relative;
+            background-color: var(--fondo-sobre);
+            box-shadow: 0 0 40px var(--sombra);
+            border-radius: 15px;
+        }
+
+        .sobre {
+            position: relative;
+            width: 400px;
+            height: 300px;
+        }
+
+        .sobre::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 4;
+            border-top: 180px solid var(--solapa-sobre);
+            border-right: 200px solid transparent;
+            border-left: 200px solid transparent;
+            transform-origin: top;
+            transition: all 0.5s ease-in-out 0.7s;
+            border-radius: 10px;
+        }
+
+        .solapa-derecha, .solapa-izquierda {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--cuerpo-sobre);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .solapa-derecha {
+            right: 0;
+            clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        }
+
+        .solapa-izquierda {
+            left: 0;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+        }
+
+        .carta {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primario);
+            text-align: center;
+            box-shadow: 0 0 5px var(--sombra);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform .5s ease-in-out;
+        }
+
+        .contenido {
+            font-family: "Gill Sans", Calibri, sans-serif;
+            color: var(--texto);
+            text-align: left;
+            font-size: 12px;
+            border: 3px dotted var(--texto);
+            padding: 10px;
+            height: 100%;
+            line-height: 14px;
+            cursor: pointer;
+            overflow-y: auto;
+        }
+
+        .corazon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: var(--corazon);
+            transform: translate(-50%,0) rotate(45deg);
+            transition: transform 0.5s ease-in-out 1s;
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .corazon::before,
+        .corazon::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--corazon);
+            border-radius: 100%;
+        }
+
+        .corazon:before { top: -15px; }
+        .corazon:after { right: 15px; }
+
+        .abierto .sobre::before { transform: rotateX(180deg); z-index: 0; }
+        .abierto .corazon { transform: rotate(90deg); transition-delay: 0.4s; }
+        .carta.mostrar-carta { transform: translateY(-290px); }
+        .carta.cerrando-carta { transform: translateY(-290px); }
+        .carta.abierta { z-index: 10000; }
+        .envoltura-sobre.desactivar-sobre .sobre::before { pointer-events: none; }
+
+        @media screen and (max-width:400px) {
+            .contenedor { width: 300px; }
+            .sobre { width: 300px; height: 250px; }
+            .sobre::before {
+                border-top:150px solid var(--solapa-sobre);
+                border-right:150px solid transparent;
+                border-left:150px solid transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Abrir Carta Para Leer ❤️</h1>
+    <div class="contenedor">
+        <div class="envoltura-sobre">
+            <div class="sobre" aria-hidden="true">
+                <div class="carta">
+                    <div class="contenido">
+                        <strong><code> Querida Diosa</code></strong>
+                        <br></br>
+
+                            <p>Desde que llegaste a mi vida, todo se siente un poco diferente. No sé si fue tu forma de ser, tu sonrisa o simplemente tú, pero lograste gustarme más de lo que imaginé. Me encantas, y cada día que pasa solo confirmo que quiero algo bonito contigo.</p> 
+
+                            <br></br>
+
+                            <p>Aveces quisiera que el tiempo pasara más rápido, solo para poder tenerte cerca y compartir todo lo que llevo dentro. Me emociona pensar en todo lo que podríamos vivir juntos, en los momentos simples que se vuelven especiales solo por estar contigo.</p>
+                            
+                                <br>
+
+                            <p>No quiero apresurar nada, pero sí quiero que sepas que tengo las mejores intenciones contigo. Me gustas de verdad, y cada día que pasa tengo más ganas de conocerte, de compartir momentos y de ver hasta dónde puede llegar esto tan bonito que siento por ti.</p>
+                            
+                            <br>
+
+                            <p>Sé que ahora no tengo mucho para darte, ni regalos, ni flores, ni salidas bonitas como me gustaría. A veces eso me frustra, porque quisiera poder demostrarte con detalles todo lo que siento. Pero aunque en este momento las cosas no sean fáciles para mí, quiero que sepas que estoy esforzándome y que sé que con el tiempo todo va a mejorar. Y cuando eso pase, te prometo que voy a darte lo que hoy no puedo, no solo en cosas materiales, sino también en momentos, en gestos y en todo lo bonito que mereces.</p>
+
+                            <br>
+
+                            <p>Quiero que sepas que te amo con todo mi corazón. No es algo que digo por costumbre, sino porque realmente lo siento. Te amo por cómo eres, por lo que me haces sentir, por la paz que me das y por la manera en que todo parece tener sentido cuando pienso en ti. No necesito que seas perfecta, porque para mí ya lo eres. Cada día que pasa me doy cuenta de que mi cariño por ti solo crece más, y que quiero hacerte parte de mi vida, no por un rato, sino por mucho tiempo. Eres la razón por la que sonrío sin motivo, y la persona que me inspira a ser mejor.</p>
+
+                            <br>
+
+                            <p>TE AMO MUCHO MI MORENITA HERMOSA ❤️ </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="corazon" title="Abrir/Cerrar"></div>
+            <div class="solapa-derecha" aria-hidden="true"></div>
+            <div class="solapa-izquierda" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <script>
+        // 💬 ALERTA al cargar
+        window.onload = function() {
+            alert("💌 ¡Hola! Tenia ratos sin programar algo asi y se me olvidaron algunas cosas, Disculpa si se ve muy simple, pero te lo hago con todo el cariño ❤️");
+        };
+
+        (function () {
+            const envoltura = document.querySelector(".envoltura-sobre");
+            const carta = document.querySelector(".carta");
+            const sobre = document.querySelector(".sobre");
+            const corazon = document.querySelector(".corazon");
+            const solapaDerecha = document.querySelector(".solapa-derecha");
+            const solapaIzquierda = document.querySelector(".solapa-izquierda");
+
+            function abrirCarta() {
+                if (!envoltura.classList.contains("abierto")) envoltura.classList.add("abierto");
+                if (!carta.classList.contains("abierta")) {
+                    carta.classList.add("mostrar-carta");
+                    setTimeout(() => {
+                        carta.classList.remove("mostrar-carta");
+                        carta.classList.add("abierta");
+                    }, 500);
+                }
+                envoltura.classList.add("desactivar-sobre");
+            }
+
+            function cerrarCarta() {
+                if (carta.classList.contains("abierta")) {
+                    carta.classList.add("cerrando-carta");
+                    setTimeout(() => {
+                        carta.classList.remove("cerrando-carta");
+                        carta.classList.remove("abierta");
+                    }, 500);
+                }
+                envoltura.classList.remove("abierto", "desactivar-sobre");
+            }
+
+            function toggleEnvoltura() {
+                const willOpen = !envoltura.classList.contains("abierto");
+                envoltura.classList.toggle("abierto");
+                if (willOpen) {
+                    if (!carta.classList.contains("abierta")) {
+                        setTimeout(() => abrirCarta(), 300);
+                    } else {
+                        envoltura.classList.add("desactivar-sobre");
+                    }
+                } else {
+                    cerrarCarta();
+                }
+            }
+
+            document.addEventListener("click", (e) => {
+                const t = e.target;
+                if (t === sobre || t === solapaDerecha || t === solapaIzquierda || t === corazon) {
+                    if (t.closest(".contenido")) return;
+                    toggleEnvoltura();
+                    return;
+                }
+                if (t.closest(".contenido")) {
+                    carta.classList.contains("abierta") ? cerrarCarta() : abrirCarta();
+                    return;
+                }
+                if (carta.classList.contains("abierta")) cerrarCarta();
+            });
+
+            [corazon, sobre, solapaDerecha, solapaIzquierda].forEach(el => {
+                if (!el) return;
+                el.setAttribute("tabindex", "0");
+                el.addEventListener("keydown", (ev) => {
+                    if (ev.key === "Enter" || ev.key === " ") {
+                        ev.preventDefault();
+                        toggleEnvoltura();
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
